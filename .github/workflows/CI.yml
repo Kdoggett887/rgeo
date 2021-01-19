@@ -39,7 +39,7 @@ jobs:
       - name: Install Geos (Windows)
         if: matrix.os == 'windows-latest'
         run: |
-          echo %VCPKG_ROOT%
+          echo $VCPKG_ROOT
           vcpkg install geos
       - run: |
           bundle exec rake
