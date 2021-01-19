@@ -36,10 +36,13 @@ jobs:
         if: matrix.os == 'macos-latest'
         run: |
           brew install geos
+      - name: LS Windows
+        if: matrix.os == 'windows-latest'
+        run: |
+          ls C:/vcpkg/triplets/community
       - name: Install Geos (Windows)
         if: matrix.os == 'windows-latest'
         run: |
-          ls C:/vcpkg/triplets/
           vcpkg install geos
       - run: |
           bundle exec rake
