@@ -44,7 +44,6 @@ jobs:
         if: matrix.os == 'windows-latest'
         run: |
           ls C:/vcpkg
-          ls C:/vcpkg/triplets/
-          ls C:/vcpkg/triplets/community
+          ls C:/vcpkg/installed
       - run: |
           bundle exec rake
