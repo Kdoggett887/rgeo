@@ -44,8 +44,8 @@ jobs:
         if: matrix.os == 'windows-latest'
         run: |
           ls C:/vcpkg
-          ls C:/vcpkg/installed/x86-windows/bin
-          ls C:/vcpkg/installed/x86-windows/lib
+          ls C:/vcpkg/installed/x86-windows/share/
+          ls C:/vcpkg/installed/x86-windows/share/geos
           ls C:/vcpkg/installed/x86-windows/include
           ls C:/vcpkg/installed/x86-windows/include/geos
       - run: |
