@@ -48,5 +48,11 @@ jobs:
           ls C:/vcpkg/installed/x86-windows/share/geos
           ls C:/vcpkg/installed/x86-windows/include
           ls C:/vcpkg/installed/x86-windows/include/geos
-      - run: |
+      - name: Run Tests (Not Windows)
+        if: matrix.os != 'windows-latest'
+        run: |
           bundle exec rake
+      - name: Run Tests (Windows)
+        if: matrix.os == 'windows-latest'
+        run: |
+          bundle exec rake -- --with-geos-config=C:/vcpkg/installed/x86-windows/share/geos/geos-config
