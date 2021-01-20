@@ -55,5 +55,5 @@ jobs:
       - name: Run Tests (Windows)
         if: matrix.os == 'windows-latest'
         run: |
-          export C_INCLUDE_PATH=C:/vcpkg/installed/x86-windows/include
+          set C_INCLUDE_PATH=C:/vcpkg/installed/x86-windows/include
           bundle exec rake -- --with-geos_c-dir=C:/vcpkg/installed/x86-windows/include
