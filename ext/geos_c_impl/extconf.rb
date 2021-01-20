@@ -29,7 +29,7 @@ else
   if have_header('geos_c.h')
     unless geosconfig
       if Gem.win_platform?
-        have_library(':geos_c.lib')
+        have_library('geos_c.lib')
       else
         have_library('geos_c')
       end
