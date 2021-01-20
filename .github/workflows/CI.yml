@@ -47,7 +47,6 @@ jobs:
           ls C:/vcpkg/installed/x86-windows/share/
           ls C:/vcpkg/installed/x86-windows/share/geos
           ls C:/vcpkg/installed/x86-windows/lib
-          ls C:/vcpkg/installed/x86-windows/lib/geos
       - name: Run Tests (Not Windows)
         if: matrix.os != 'windows-latest'
         run: |
