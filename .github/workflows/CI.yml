@@ -55,4 +55,4 @@ jobs:
       - name: Run Tests (Windows)
         if: matrix.os == 'windows-latest'
         run: |
-          bundle exec rake -- --with-geos-config=C:/vcpkg/installed/x86-windows/share/geos/geos-config
+          bundle exec rake -- --with-geos_c-dir=C:/vcpkg/installed/x86-windows/include
