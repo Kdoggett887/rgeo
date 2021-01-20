@@ -27,7 +27,14 @@ else
 
   found_geos_ = false
   if have_header('geos_c.h')
-    have_library('geos_c') unless geosconfig
+    unless geosconfig
+      if $mswin || $mingw
+        have_library('libgeos_c')
+      else
+        have_library('geos_c')
+      end
+    end
+
     found_geos_ = true if have_func('GEOSSetSRID_r', 'geos_c.h')
     have_func('GEOSPreparedContains_r', 'geos_c.h')
     have_func('GEOSPreparedDisjoint_r', 'geos_c.h')
