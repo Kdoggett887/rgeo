@@ -55,4 +55,4 @@ jobs:
       - name: Run Tests (Windows)
         if: matrix.os == 'windows-latest'
         run: |
-          bundle exec rake -- --with-opt-include=C:/vcpkg/installed/x86-windows/include --with-opt-lib=C:/vcpkg/installed/x86-windows/lib/geos
+          bundle exec rake -- --with-opt-include=C:/vcpkg/installed/x86-windows/include --with-opt-lib=C:/vcpkg/installed/x86-windows/lib/
