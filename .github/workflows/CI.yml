@@ -39,7 +39,7 @@ jobs:
       - name: Install Geos (Windows)
         if: matrix.os == 'windows-latest'
         run: |
-          vcpkg install geos
+          vcpkg install geos:x64-windows
       - name: LS Windows
         if: matrix.os == 'windows-latest'
         run: |
@@ -55,4 +55,4 @@ jobs:
       - name: Run Tests (Windows)
         if: matrix.os == 'windows-latest'
         run: |
-          bundle exec rake -- --with-opt-include=C:/vcpkg/installed/x86-windows/include --with-opt-lib=C:/vcpkg/installed/x86-windows/lib
+          bundle exec rake -- --with-opt-include=C:/vcpkg/installed/x64-windows/include --with-opt-lib=C:/vcpkg/installed/x64-windows/lib
