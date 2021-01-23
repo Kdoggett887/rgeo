@@ -6,7 +6,7 @@ require "bundler/gem_tasks"
 
 # Build tasks
 
-if RUBY_DESCRIPTION.match(/^jruby/)
+if RUBY_DESCRIPTION.match(/^jruby/) || ENV["RGEO_SKIP_C_EXT"] == 'true'
   task :compile
 else
   Rake::ExtensionTask.new "geos_c_impl" do |ext|

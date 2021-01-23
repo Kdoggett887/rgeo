@@ -55,4 +55,6 @@ jobs:
       - name: Run Tests (Windows)
         if: matrix.os == 'windows-latest'
         run: |
-          bundle exec rake -- --with-opt-include=C:/vcpkg/installed/x64-windows/include --with-opt-lib=C:/vcpkg/installed/x64-windows/lib
+          export GEOS_LIBRARY_PATH=C:/vcpkg/installed/x64-windows/bin/geos_c.dll
+          export RGEO_SKIP_C_EXT=true
+          bundle exec rake
