@@ -3,8 +3,15 @@
 require "rake/testtask"
 require "rake/extensiontask"
 require "bundler/gem_tasks"
-
+require 'ffi'
 # Build tasks
+p ENV['RGEO_SKIP_C_EXT']
+p ENV['GEOS_LIBRARY_PATH']
+
+p module TestGeos
+  extend FFI::Library
+  ffi_lib(ENV['GEOS_LIBRARY_PATH'])
+end
 
 if RUBY_DESCRIPTION.match(/^jruby/) || ENV["RGEO_SKIP_C_EXT"] == 'true'
   task :compile
